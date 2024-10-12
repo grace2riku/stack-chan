@@ -1,7 +1,7 @@
 import type { StackchanMod } from 'default-mods/mod'
 import Timer from 'timer'
 import { randomBetween, asyncWait } from 'stackchan-util'
-import { getDeviceSpecificColor } from '../color/color'
+import { getDeviceSpecificColor } from 'color'
 
 const FORWARD = {
   y: 0,
@@ -91,9 +91,9 @@ export const onRobotCreated: StackchanMod['onRobotCreated'] = (robot) => {
       trace('pressed B\n')
       if (flag) {
         robot.setColor('primary', 0xff, 0xff, 0xff)
-        robot.setColor('secondary', 0x00, 0x00, 0x00)
+        robot.setColor('secondary', r, g, b)
       } else {
-        robot.setColor('primary', 0x00, 0x00, 0x00)
+        robot.setColor('primary', r, g, b)
         robot.setColor('secondary', 0xff, 0xff, 0xff)
       }
       flag = !flag
